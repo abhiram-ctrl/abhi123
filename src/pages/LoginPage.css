@@ -1,0 +1,610 @@
+/* Login Page Styles - EXACT SAME as Forgot Password Page */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 100%);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Animation */
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(46, 213, 115, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+    animation: pulseBackground 15s ease-in-out infinite alternate;
+}
+
+@keyframes pulseBackground {
+    0% { 
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    100% { 
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+}
+
+/* Wrapper */
+.login-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+/* Glass Card - EXACT SAME as Forgot Password */
+.login-card {
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    box-shadow: 
+        0 8px 32px 0 rgba(0, 0, 0, 0.5),
+        0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    width: 40%;
+    min-width: 400px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Header */
+.login-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.login-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    font-weight: 700;
+    background: linear-gradient(45deg, #fff, #a5b4fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.login-header p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0;
+}
+
+/* Role Tabs - Matching Method Selection from Forgot Password */
+.role-tabs {
+    display: flex;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 9px;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    gap: 0.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.role-tab {
+    flex: 1;
+    padding: 9px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.role-tab:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.role-tab.active {
+    background: linear-gradient(135deg, #86efac, #2ed573);
+    color: white;
+    box-shadow: 0 2px 8px rgba(46, 213, 115, 0.2);
+}
+
+/* Form */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Input Groups - EXACT SAME as Forgot Password */
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    /* padding:; */
+    height: 50px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.input-group:focus-within {
+    border-color: #86efac;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 0 2px rgba(134, 239, 172, 0.2);
+}
+
+.input-icon {
+    color: rgba(255, 255, 255, 0.6);
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+}
+
+.input-group:focus-within .input-icon {
+    color: #86efac;
+}
+
+.input-group input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    height: 100%;
+    width: 100%;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Password Toggle - EXACT SAME as Forgot Password */
+.password-toggle {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    font-size: 0.8rem;
+    min-width: 60px;
+}
+
+.password-toggle:hover:not(:disabled) {
+    color: white;
+}
+
+.password-toggle:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Form Options */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.checkbox-label:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    appearance: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.checkbox-label input[type="checkbox"]:checked {
+    background: linear-gradient(135deg, #86efac, #2ed573);
+    border-color: transparent;
+}
+
+.checkbox-label input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.otp-toggle {
+    background: transparent;
+    border: none;
+    color: #86efac;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.otp-toggle:hover:not(:disabled) {
+    color: white;
+    background: rgba(134, 239, 172, 0.1);
+}
+
+/* Error Message - EXACT SAME as Forgot Password */
+.error-message {
+    background: rgba(255, 71, 87, 0.1);
+    border: 1px solid rgba(255, 71, 87, 0.3);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    color: #ffab91;
+    font-size: 0.9rem;
+    font-weight: 500;
+    animation: slideIn 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+/* Login Button - EXACT SAME as Forgot Password Buttons */
+.login-button {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #86efac 0%, #2ed573 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 0.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.login-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.login-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(46, 213, 115, 0.4);
+}
+
+.login-button:hover:not(:disabled)::before {
+    left: 100%;
+}
+
+.login-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.login-button.loading {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+.login-button.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 3px solid transparent;
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Login Footer */
+.login-footer {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.login-footer p {
+    margin-bottom: 0.5rem;
+}
+
+.link-button {
+    background: transparent;
+    border: none;
+    color: #86efac;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: inherit;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.link-button:hover:not(:disabled) {
+    color: white;
+    background: rgba(134, 239, 172, 0.1);
+}
+
+/* Separate Admin Section - Matching Help Section */
+.separate-admin-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+}
+
+.admin-divider {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.admin-divider::before,
+.admin-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.admin-divider span {
+    padding: 0 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.admin-system-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.875rem;
+    background: rgba(255, 71, 87, 0.1);
+    border: 1px solid rgba(255, 71, 87, 0.3);
+    border-radius: 12px;
+    color: #ff6b81;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 0.75rem;
+    backdrop-filter: blur(10px);
+}
+
+.admin-system-button:hover:not(:disabled) {
+    background: rgba(255, 71, 87, 0.2);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 71, 87, 0.2);
+}
+
+.admin-system-button svg {
+    width: 18px;
+    height: 18px;
+}
+
+.admin-note {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75rem;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Responsive Design - EXACT SAME as Forgot Password */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 1rem;
+    }
+    
+    .login-card {
+        width: 90%;
+        min-width: unset;
+        padding: 2rem 1.5rem;
+    }
+    
+    .login-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .role-tabs {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    .role-tab {
+        padding: 0.75rem;
+    }
+    
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+    
+    .separate-admin-section {
+        margin-top: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 1.5rem;
+    }
+    
+    .login-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .input-group {
+        height: 48px;
+    }
+    
+    .admin-system-button {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Animation for form content */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* OTP Input Specific */
+.otp-input {
+    letter-spacing: 4px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+/* Add these styles to your existing LoginPage.css */
+
+.role-indicator {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.role-badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.role-badge.citizen {
+  background: linear-gradient(135deg, #86efac 0%, #2ed573 100%);
+}
+
+.role-badge.volunteer {
+  background: linear-gradient(135deg, #86efac 0%, #2ed573 100%);
+}
+
+/* Optional: Add hover effect similar to login button */
+.role-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(46, 213, 115, 0.3);
+}
+
+
+
+
+
+
+
+/* .role-badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.role-badge.citizen {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.role-badge.volunteer {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+} */
+
+.role-message {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.back-to-roles {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.link-button.small {
+  font-size: 0.85rem;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Hide the old role tabs completely */
+.role-tabs {
+  display: none;
+}

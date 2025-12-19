@@ -1,0 +1,80 @@
+/* Global width fixes */
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure all pages span full width */
+.page-container {
+  width: 100vw;
+  max-width: 100%;
+}
+
+/* Ensure glass cards don't overflow */
+.glass-card {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Responsive container for content */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+/* FORCE FULL WIDTH FIX */
+html, body, #root, .App {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+}
+
+/* Reset any max-width constraints */
+* {
+  max-width: none !important;
+}
+
+/* Specific fixes for common components */
+div {
+  max-width: none;
+}
+
+section, main, header, footer {
+  width: 100%;
+}

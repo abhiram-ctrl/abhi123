@@ -1,0 +1,568 @@
+/* LandingPage.css */
+.landing-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.background-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 71, 87, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(46, 213, 115, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(55, 66, 250, 0.1) 0%, transparent 50%);
+  z-index: 0;
+}
+
+/* Header Styles */
+.landing-header {
+  padding: 1.5rem 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+
+.header-card {
+  max-width: 1200px;        /* same width as hero */
+  margin: 0 auto;          /* center horizontally */
+  padding: 1.5rem 2rem;    /* equal left & right space */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideDown 0.8s ease-out;
+  box-sizing: border-box;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-icon {
+  color: #ff4757;
+  filter: drop-shadow(0 0 8px rgba(255, 71, 87, 0.3));
+  animation: pulse 2s infinite;
+}
+
+.header-content h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #fff, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 300;
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lang-select {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.lang-select:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.lang-select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.3);
+}
+
+/* Main Content */
+.landing-main {
+  padding: 2rem;
+  position: relative;
+  z-index: 5;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-section {
+  margin-bottom: 3rem;
+  animation: fadeIn 1s ease-out 0.3s both;
+}
+
+.hero-card {
+  max-width: 1200px;        /* control width */
+  margin: 0 auto;          /* center horizontally */
+  padding: 3rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.hero-card h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #fff, #86efac);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Role Buttons */
+.role-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.role-button {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding: 2rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.role-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: 0.5s;
+}
+
+.role-button:hover::before {
+  left: 100%;
+}
+
+.role-button:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.button-icon {
+  margin-right: 1.5rem;
+  padding: 1rem;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-text h3 {
+  font-size: 1.8rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.button-text p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Citizen Button */
+.role-button.citizen {
+  border: 2px solid rgba(255, 71, 87, 0.3);
+}
+
+.role-button.citizen .button-icon {
+  background: linear-gradient(135deg, rgba(255, 71, 87, 0.2), rgba(255, 71, 87, 0.4));
+  color: #ff4757;
+}
+
+.role-button.citizen:hover {
+  border-color: rgba(255, 71, 87, 0.6);
+  box-shadow: 0 0 30px rgba(255, 71, 87, 0.2);
+}
+
+/* Volunteer Button */
+.role-button.volunteer {
+  border: 2px solid rgba(46, 213, 115, 0.3);
+}
+
+.role-button.volunteer .button-icon {
+  background: linear-gradient(135deg, rgba(46, 213, 115, 0.2), rgba(46, 213, 115, 0.4));
+  color: #2ed573;
+}
+
+.role-button.volunteer:hover {
+  border-color: rgba(46, 213, 115, 0.6);
+  box-shadow: 0 0 30px rgba(46, 213, 115, 0.2);
+}
+
+/* Admin Button */
+.role-button.admin {
+  border: 2px solid rgba(55, 66, 250, 0.3);
+}
+
+.role-button.admin .button-icon {
+  background: linear-gradient(135deg, rgba(55, 66, 250, 0.2), rgba(55, 66, 250, 0.4));
+  color: #3742fa;
+}
+
+.role-button.admin:hover {
+  border-color: rgba(55, 66, 250, 0.6);
+  box-shadow: 0 0 30px rgba(55, 66, 250, 0.2);
+}
+
+/* Donation Section */
+.donation-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.donation-text {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+}
+
+.donation-button {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.donation-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.donation-button:hover::before {
+  left: 100%;
+}
+
+.donation-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+}
+
+/* Features Section */
+.features-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.feature-card {
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  margin-right:50px;
+  
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.feature-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 8px rgba(255, 71, 87, 0.3));
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 12px rgba(255, 71, 87, 0.5));
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .role-buttons {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-header {
+    padding: 1rem;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .header-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .tagline {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 0.5rem;
+  }
+  
+  .language-selector {
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .landing-main {
+    padding: 1rem;
+  }
+  
+  .hero-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .hero-card h2 {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .role-button {
+    padding: 1.5rem;
+  }
+  
+  .button-text h3 {
+    font-size: 1.5rem;
+  }
+  
+  .features-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .role-button {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .button-icon {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .donation-button {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+/* Loading state (optional) */
+.landing-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Selection color */
+::selection {
+  background: rgba(102, 126, 234, 0.5);
+  color: white;
+}
+/* Landing Page Styles - FIXED FULL WIDTH */
+.landing-container {
+  min-height: 100vh;
+  padding: 0; /* Remove padding from container */
+  position: relative;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Keep other background styles */
+.background-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--primary-gradient);
+  z-index: -2;
+}
+
+/* FIX: Update header to span full width */
+.landing-header {
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+/* FIX: Make header card full width */
+.header-card {
+  margin-left:10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 95%;
+  /* border-radius: 0 0 20px 20px; Rounded bottom corners only */
+  padding: 2rem 2rem !important; /* Add padding directly */
+}
+
+/* FIX: Main content should span full width */
+.landing-main {
+  max-width: 100%; /* Change from 1200px to 100% */
+  margin: 0;
+  padding: 0 2rem; /* Add padding here instead */
+  width: 100%;
+}
+
+/* FIX: Hero card should span full width */
+.hero-card {
+   margin-left:5px;
+  padding: 3rem;
+  text-align: center;
+  width: 95%;
+  /* margin: 0 auto; */
+}
+
+/* FIX: Features section should span full width */
+.features-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem 4rem 2rem; /* Add padding */
+  max-width: 1200px; /* But limit max width for content */
+  /* margin: 0 auto; Center the features section */
+}
+
+/* Keep all other styles... */

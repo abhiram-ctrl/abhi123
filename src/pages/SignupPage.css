@@ -1,0 +1,918 @@
+/* Signup Page Styles - Matching Login Page */
+.signup-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 100%);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Alert Styles */
+.alert {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    animation: slideDown 0.3s ease-out;
+}
+
+.alert-error {
+    background-color: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+}
+
+.alert-success {
+    background-color: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: #86efac;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animated background - Matching Login */
+.signup-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(46, 213, 115, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+    animation: pulseBackground 15s ease-in-out infinite alternate;
+}
+
+@keyframes pulseBackground {
+    0% { 
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    100% { 
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+}
+
+/* Wrapper - Same as Login */
+.signup-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+/* Glass Card - EXACT SAME as Login Page */
+.signup-card {
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    box-shadow: 
+        0 8px 32px 0 rgba(0, 0, 0, 0.5),
+        0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    width: 40%; /* Same as login */
+    min-width: 400px; /* Same as login */
+    max-width: 500px; /* Same as login */
+    margin: 0 auto; /* Centers horizontally */
+}
+
+/* Header - Matching Login */
+.signup-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+.back-button {
+    position: relative;
+    margin-left: -50px; /* Simply move left with negative margin */
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 5px 5px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    margin-bottom: 100px;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateX(-2px);
+}
+
+.back-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.signup-header h2 {
+   
+    font-size: 2.2rem;
+    margin-bottom:3rem;
+    color: white;
+    font-weight: 700;
+    background: linear-gradient(45deg, #fff, #a5b4fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-left:30px;
+}
+
+.signup-header p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.5rem;
+}
+
+/* Step Indicator - Matching Login color theme */
+.step-indicator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    position: relative;
+    padding: 0 1rem;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.step.active .step-number {
+    background: linear-gradient(135deg, #86efac, #2ed573); /* Login button gradient */
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 0 20px rgba(46, 213, 115, 0.4);
+}
+
+.step span {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.step.active span {
+    color: white;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 20px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.15);
+    z-index: 1;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #86efac, #2ed573); /* Login gradient */
+    transition: width 0.5s ease;
+    box-shadow: 0 0 10px rgba(46, 213, 115, 0.3);
+}
+
+/* Step Content */
+.step-content {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.step-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    font-weight: 600;
+}
+
+.step-description {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+/* Role Selection - Using Login color scheme */
+.role-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.role-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid transparent;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.role-option:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateX(5px);
+}
+
+.role-option.selected {
+    background: rgba(134, 239, 172, 0.15); /* Login green color */
+    border-color: rgba(46, 213, 115, 0.5);
+    box-shadow: 0 4px 20px rgba(46, 213, 115, 0.2);
+}
+
+.role-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+}
+
+.role-option.selected .role-icon {
+    background: rgba(134, 239, 172, 0.3); /* Login green */
+    color: #86efac;
+}
+
+.role-info {
+    flex: 1;
+}
+
+.role-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: white;
+    font-weight: 600;
+}
+
+.role-info p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.4;
+}
+
+.role-check {
+    width: 24px;
+    height: 24px;
+}
+
+.check-circle {
+    width: 24px;
+    height: 24px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.role-option.selected .check-circle {
+    background: #2ed573; /* Login green */
+    border-color: #2ed573;
+}
+
+/* Input Grid - Matching Login inputs */
+.input-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 0 1rem;
+    height: 50px; /* Same as login */
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.input-group:focus-within {
+    border-color: #86efac; /* Login green */
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 0 2px rgba(134, 239, 172, 0.2);
+}
+
+.input-group.error {
+    border-color: #ff4757;
+}
+
+.input-group.error:focus-within {
+    box-shadow: 0 0 0 2px rgba(255, 71, 87, 0.2);
+}
+
+.input-icon {
+    color: rgba(255, 255, 255, 0.6);
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+}
+
+.input-group:focus-within .input-icon {
+    color: #86efac; /* Login green */
+}
+
+.input-group input,
+.input-group select {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    height: 100%;
+    width: 100%;
+}
+
+.input-group input::placeholder,
+.input-group select option {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.input-group select {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+}
+
+.password-toggle {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+    color: white;
+}
+
+.password-toggle:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.field-error {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    font-size: 0.75rem;
+    color: #ffab91;
+    font-weight: 500;
+}
+
+/* Terms Section */
+.terms-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    appearance: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.checkbox-label input[type="checkbox"]:checked {
+    background: linear-gradient(135deg, #86efac, #2ed573); /* Login gradient */
+    border-color: transparent;
+}
+
+.checkbox-label input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.checkbox-label input[type="checkbox"].error {
+    border-color: #ff4757;
+}
+
+.terms-link {
+    color: #86efac; /* Login green */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.terms-link:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+/* Form Navigation - Matching Login buttons */
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.secondary-button,
+.primary-button {
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.secondary-button {
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.secondary-button:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.primary-button {
+    background: linear-gradient(135deg, #86efac 0%, #2ed573 100%); /* Login gradient */
+    color: white;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.primary-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.primary-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(46, 213, 115, 0.4);
+}
+
+.primary-button:hover:not(:disabled)::before {
+    left: 100%;
+}
+
+.primary-button.loading {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+.primary-button.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 3px solid transparent;
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.secondary-button:disabled,
+.primary-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Step Dots (Mobile) */
+.step-dots {
+    display: none;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.step-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.step-dot.active {
+    background: white;
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(46, 213, 115, 0.5);
+}
+
+/* Error Message - Matching Login */
+.error-message {
+    background: rgba(255, 71, 87, 0.1);
+    border: 1px solid rgba(255, 71, 87, 0.3);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    color: #ffab91;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    animation: slideIn 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design - Matching Login */
+@media (max-width: 768px) {
+    .signup-container {
+        padding: 1rem;
+    }
+    
+    .signup-card {
+        width: 90%;
+        min-width: unset;
+        padding: 2rem 1.5rem;
+    }
+    
+    .signup-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .back-button {
+        position: relative;
+        margin-bottom: 1rem;
+        left: 0;
+        justify-content: center;
+    }
+    
+    .step-indicator {
+        display: none;
+    }
+    
+    .step-dots {
+        display: flex;
+    }
+    
+    .role-option {
+        padding: 1.25rem;
+    }
+    
+    .role-info h4 {
+        font-size: 1rem;
+    }
+    
+    .role-info p {
+        font-size: 0.8rem;
+    }
+    
+    .form-navigation {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .secondary-button,
+    .primary-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-card {
+        padding: 1.5rem;
+    }
+    
+    .signup-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .step-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .input-group {
+        height: 48px;
+    }
+    
+    .terms-section {
+        padding: 1rem;
+    }
+}
+/* Add these styles to your existing SignupPage.css */
+
+/* Volunteer Info Box */
+.volunteer-info-box {
+  background: rgba(134, 239, 172, 0.1);
+  border: 1px solid rgba(46, 213, 115, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.info-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: #86efac;
+  font-weight: 600;
+}
+
+.info-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.info-step {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.info-step .step-number {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(134, 239, 172, 0.2);
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #86efac;
+}
+
+/* Role Note */
+.role-note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.note-icon {
+  font-size: 0.7rem;
+}
+
+.note-text {
+  font-style: italic;
+}
+
+/* Final Step Info */
+.final-step-info {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border-left: 4px solid #86efac;
+}
+
+.volunteer-final-info,
+.citizen-final-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.volunteer-final-info svg {
+  color: #86efac;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.citizen-final-info svg {
+  color: #a5b4fc;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.final-step-info p {
+  margin: 0.25rem 0;
+  line-height: 1.5;
+}
+
+.final-step-info .note {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .volunteer-info-box {
+    padding: 1.25rem;
+  }
+  
+  .info-step {
+    font-size: 0.9rem;
+  }
+  
+  .final-step-info {
+    padding: 1rem;
+  }
+}
+/* Add these styles to your existing SignupPage.css */
+
+/* Role badge container */
+.role-badge-container {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Role badge */
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, #86efac 0%, #2ed573 100%);
+}
+
+.role-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
+/* Change role link */
+.change-role-link {
+  background: none;
+  border: none;
+  color: #86efac;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0.25rem 0;
+  margin-top: 0.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.change-role-link:hover {
+  opacity: 0.8;
+}
+
+.change-role-link:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Hide the old role selection section */
+.role-selection {
+  display: none;
+}
+
+/* Adjust step indicator for 2 steps */
+.step-indicator .step:first-child::after {
+  width: 50%;
+}
+
+.step-indicator .step:nth-child(2)::before {
+  width: 50%;
+}
